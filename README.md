@@ -8,7 +8,7 @@ The first topic that needs to be reviewed before we start the tutorial, is file 
 
 ### Config folder:
 
-#### Mddleware folder:
+#### Middleware folder:
 * isAuthenticated.js - standard Connect middleware which restricts the routes a user is not allowed to access if they are not logged in. If authentication is successful (i.e. logged in), the user is directed to the restricted route, members.html page for example
 * config.json - loads configuration to connect to the server
 * passport.js - contains javascript logic that is used to authenticate requests. In our case, telling passport we want to log in with an email address and password
