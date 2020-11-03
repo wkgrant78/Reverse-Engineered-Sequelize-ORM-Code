@@ -1,38 +1,38 @@
 # Reverse Engineered Sequelize ORM Code
 
-In this tutorial we will delve into the codebase of a functioning application and the . The necessary starter code for a basic project has been provided for you. Within the Develop folder, there are subfolders containing the files that will be called upon to execute the application. 
+In this tutorial we will delve into the codebase of a functioning application. The necessary starter code for a basic project has been provided for you. Within the Develop folder, there are subfolders containing the files that will be called upon to execute the application. 
 
-It must be noted that this tutorial is specific for Windows platform only. The specific tools used in this walk through are Visual Studio Code, My SQL Workbench and GitHub.
+It must be noted that this tutorial is specific for Windows platform only, and may vary according to your OS. The specific tools used in this walk through are Visual Studio Code, My SQL Workbench and Google Chrome.
 
-The first topic that needs to be reviewed is the file dependencies. We will start with the first folder in the Develop folder and work our way through them sequentially.
+The first topic that needs to be reviewed before we start the tutorial, is file dependencies. We will start with the first folder in the Develop folder and work our way through them sequentially. This should give you an understanding of how and what each file does.
 
 ### Config folder:
 
-#### mMddleware folder:
-* isAuthenticated.js - standard Connect middleware which restricts routes a user is not allowed to access if they are not logged in. If authentication is successful (i.e. logged in), the user is directed to the restricted route (members.html)
-* config.json - loads configuration to connect to server
+#### Mddleware folder:
+* isAuthenticated.js - standard Connect middleware which restricts the routes a user is not allowed to access if they are not logged in. If authentication is successful (i.e. logged in), the user is directed to the restricted route, members.html page for example
+* config.json - loads configuration to connect to the server
 * passport.js - contains javascript logic that is used to authenticate requests. In our case, telling passport we want to log in with an email address and password
 
 #### Models folder:
-* index.js - connects to database via the config.js code and imports users log in data
-* user.js - script that defines and secures the user data in the  “passport_demo” database. The user model requires "bcrypt" for password hashing
+* index.js - connects to database via the config.js code and imports users log in credentials
+* user.js - script that defines and secures the user data in the  “passport_demo” database. The user model requires "bcrypt" for password hashing, which is putting a password through a hashing algorithm (bcrypt) to turn plaintext into an unintelligible series of numbers and letters
 
 #### Public folder:
-* Login.html, members.html, and signup.html are the general front-end framework. They define the layout of the html page, and require respective js and css files 
+* Login.html, members.html, and signup.html are the general front-end framework. They define the layout of the html page, and require respective javascript (.js)and cascading style sheests (.css) files 
 
 ##### Js folder:
-* login.js, members.js, and signup.js files - general javascript that defines the functionalities of the html elements  
+* login.js, members.js, and signup.js files - are general javascript that define the functionalities of the html elements  
 
 ##### Stylesheets folder:
 * style.css - defines the general styling of the html pages
 
 #### Routes folder:
 * api-routes.js - define the routes for signing up, logging in/out and requesting user data. It requires the passport.json file (see folder 1) and the model.js files (see folder 2), to display the user data on the client side
-* html-routes.js - verifies if the user has an account, if they are signed in/out, or needs to create an account, and directs them to the respective html page. It requires the  isAuthenticated.js file (folder 1) to authenticate user credentials
+* html-routes.js - verifies if the user has an account, if they are signed in/out, or needs to create an account, and directs them to the respective html page. This file requires the isAuthenticated.js file (folder 1) to authenticate user credentials
 
 #### Additional files in the Develop folder:
-* package.json - contains all package info, node modules used, version info, etc
-* server.js - requires the npm packages installed, middleware, model files, * route files, sets up the PORT and syncs the database.
+* package.json - contains all package information, node modules being used, version information, etc
+* server.js - requires the npm packages installed, middleware, model files, route files. It also sets up the PORT and syncs to the database/s.
 * schema.sql - defines the basic database where user data is stored
 
 ### A Basic Codebase Tutorial
