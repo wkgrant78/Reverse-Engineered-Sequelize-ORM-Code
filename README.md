@@ -8,24 +8,26 @@ The first topic that needs to be reviewed is the file dependencies. We will star
 
 ### Config folder:
 
-#### middleware folder:
-* isAuthenticated.js - standard Connect middleware which restricts routes a user is not allowed to access if they are not logged in (. If authentication is successful (i.e. logged in), the user is directed to the restricted route (members.html)
+#### mMddleware folder:
+* isAuthenticated.js - standard Connect middleware which restricts routes a user is not allowed to access if they are not logged in. If authentication is successful (i.e. logged in), the user is directed to the restricted route (members.html)
 * config.json - loads configuration to connect to server
 * passport.js - contains javascript logic that is used to authenticate requests. In our case, telling passport we want to log in with an email address and password
 
 #### Models folder:
 * index.js - connects to database via the config.js code and imports users log in data
-* user.js - script that defines and secures the user data in the  “passport_demo” database. The user model requires "bcrypt" for password hashing. 
+* user.js - script that defines and secures the user data in the  “passport_demo” database. The user model requires "bcrypt" for password hashing
 
 #### Public folder:
 * Login.html, members.html, and signup.html are the general front-end framework. They define the layout of the html page, and require respective js and css files 
+
 ##### Js folder:
-* login.js, members.js, and signup.js files are general javascript that define the functionalities of the html elements  
+* login.js, members.js, and signup.js files - general javascript that defines the functionalities of the html elements  
+
 ##### Stylesheets folder:
-* style.css defines the general styling of html pages
+* style.css - defines the general styling of the html pages
 
 #### Routes folder:
-* api-routes.js - define the routes for signing up, logging in/out and requesting user data. It requires the passport.json file (see folder 1) and the model.js files (see folder 2) defined earlier, to display the user data on the client side
+* api-routes.js - define the routes for signing up, logging in/out and requesting user data. It requires the passport.json file (see folder 1) and the model.js files (see folder 2), to display the user data on the client side
 * html-routes.js - verifies if the user has an account, if they are signed in/out, or needs to create an account, and directs them to the respective html page. It requires the  isAuthenticated.js file (folder 1) to authenticate user credentials
 
 #### Additional files in the Develop folder:
@@ -50,7 +52,9 @@ The first topic that needs to be reviewed is the file dependencies. We will star
 
 4. In the integrated terminal, type “node server.js”. This will connect to the server specified in the config.json file. You should see “Listening on port 8080. Visit http://localhost:8080/ in your browser.” in the terminal. This confirms that you are connected to the server.
 
-5. To confirm that we are connected to the server, navigate to your internet browser and type the following, “http://localhost:8080” in the search bar. You should see a Sign Up Form.
+5. To confirm that we are connected to the server, navigate to your internet browser and type the following, “http://localhost:8080” in the search bar. You should see the following html page: 
+
+<img src="/img/confirmation.PNG" alt="confirmation screenshot">
 
 
 ### GITHUB URL:
